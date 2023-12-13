@@ -1,0 +1,4 @@
+RGB_LED	KEYWORD1
+setColor	KEYWORD2
+rainbow	KEYWORD2
+begin	KEYWORD2
