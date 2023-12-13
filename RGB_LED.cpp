@@ -16,7 +16,7 @@
 
  void RGB_LED::begin()
  {
-  	pinMode(_pin_R, OUTPUT);
+    pinMode(_pin_R, OUTPUT);
 	pinMode(_pin_G, OUTPUT);
 	pinMode(_pin_B, OUTPUT);
 
@@ -30,4 +30,30 @@
   analogWrite(_pin_R, 255-R);
   analogWrite(_pin_G, 255-G);
   analogWrite(_pin_B, 255-B);
+ }
+
+ void RGB_LED::setColor(String color)
+ {
+    color.toLowerCase();
+    int R, G, B;
+
+    if(color == "red"){R=255; G=0; B=0;}
+    else if(color == "lime"){R=0; G=255; B=0;}
+    else if(color == "blue"){R=0; G=0; B=255;}
+    else if(color == "white"){R=255; G=255; B=255;}
+    else if(color == "black"){R=0; G=0; B=0;}
+    else if(color == "yellow"){R=255; G=255; B=0;}
+    else if(color == "cyan"){R=0; G=255; B=255;}
+    else if(color == "magenta"){R=255; G=0; B=255;}
+    else if(color == "gray"){R=128; G=128; B=128;}
+    else if(color == "maroon"){R=128; G=0; B=0;}
+    else if(color == "olive"){R=128; G=128; B=0;}
+    else if(color == "green"){R=0; G=128; B=0;}
+    else if(color == "purple"){R=128; G=128; B=128;}
+    else if(color == "teal"){R=0; G=128; B=128;}
+    else if(color == "navy"){R=0; G=0; B=128;}
+
+    analogWrite(_pin_R, 255-R);
+    analogWrite(_pin_G, 255-G);
+    analogWrite(_pin_B, 255-B);
  }

@@ -15,6 +15,7 @@ class RGB_LED
     RGB_LED(int pin_R, int pin_G, int pin_B);
     void begin();
     void setColor(int R, int G, int B);
+    void setColor(String color);
   private:
     int _pin_R;
     int _pin_G;
