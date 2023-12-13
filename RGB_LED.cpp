@@ -57,3 +57,27 @@
     analogWrite(_pin_G, 255-G);
     analogWrite(_pin_B, 255-B);
  }
+
+ void RGB_LED::rainbow(int delayTime)
+ {
+    int pins[] = {_pin_R, _pin_G, _pin_B};
+    int pin2 = 0;
+    int pin3 = 0;
+
+    for(int pin1=0; pin1<3; pin1++)
+    {
+        pin2 = pin1 + 1;
+        if(pin2 > 2){pin2 = 0;}
+        pin3 = pin2 + 1;
+        if(pin3 > 2){pin3 = 0;}
+        
+        for(int i=0; i<255; i++)
+        {
+        analogWrite(pins[pin1], i);
+        analogWrite(pins[pin2], 255-i);
+        analogWrite(pins[pin3], 255);
+        delay(delayTime);
+        }
+    }
+
+ }

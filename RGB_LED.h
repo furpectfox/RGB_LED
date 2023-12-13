@@ -16,6 +16,7 @@ class RGB_LED
     void begin();
     void setColor(int R, int G, int B);
     void setColor(String color);
+    void rainbow(int delayTime);
   private:
     int _pin_R;
     int _pin_G;
